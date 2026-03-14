@@ -34,7 +34,7 @@ return {
         keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Fuzzy find recent files" })
         keymap.set("n", "<leader>fs", builtin.live_grep, { desc = "Find string in cwd" })
         -- TODO: fix these keymaps
-        -- keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor in cwd" })
-        -- keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
+        keymap.set("n", "<leader>fc", builtin.grep_string, { desc = "Find string under cursor in cwd" })
+        keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "Find todos" })
     end
 }
