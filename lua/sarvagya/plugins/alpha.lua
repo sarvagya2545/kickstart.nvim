@@ -1,3 +1,4 @@
+-- Sets the greeter for NVIM
 return {
     "goolord/alpha-nvim",
     event = "VimEnter",
