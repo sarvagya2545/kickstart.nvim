@@ -1,9 +1,10 @@
 return {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = "VeryLazy",
     dependencies = {
         "hrsh7th/cmp-buffer", -- source for text in buffer
         "hrsh7th/cmp-path", -- source for file system paths
+        "hrsh7th/cmp-nvim-lsp",
         {
             "L3MON4D3/LuaSnip",
             -- follow latest release.
@@ -29,6 +30,7 @@ return {
             completion = {
                 completeopt = "menu,menuone,preview,noselect",
             },
+            preselect = cmp.PreselectMode.None,
             snippet = { -- configure how nvim-cmp interacts with snippet engine
                 expand = function(args)
                     luasnip.lsp_expand(args.body)
@@ -45,6 +47,7 @@ return {
             }),
             -- sources for autocompletion
             sources = cmp.config.sources({
+                { name = "nvim_lsp" },
                 { name = "luasnip" }, -- snippets
                 { name = "buffer" }, -- text within current buffer
                 { name = "path" }, -- file system paths
